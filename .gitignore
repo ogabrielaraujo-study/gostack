@@ -2,8 +2,7 @@
 node_modules
 yarn.lock
 .env
-/.next
-/out
+/tmp/
 
 # IDE
 .idea
