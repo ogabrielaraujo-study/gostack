@@ -1,6 +1,6 @@
 # GoStack
 
-### Getting Start
+### Getting Start - API
 
 ```
 yarn install
