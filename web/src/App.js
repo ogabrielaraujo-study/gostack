@@ -7,13 +7,19 @@ import GlobalStyle from "./styles/global";
 import Routes from "./routes";
 import history from "./services/history";
 
+// redux
+import { Provider } from "react-redux";
+import store from "./store";
+
 function App() {
   return (
-    <Router history={history}>
-      <Routes />
+    <Provider store={store}>
+      <Router history={history}>
+        <Routes />
 
-      <GlobalStyle />
-    </Router>
+        <GlobalStyle />
+      </Router>
+    </Provider>
   );
 }
 
