@@ -9,16 +9,19 @@ import history from "./services/history";
 
 // redux
 import { Provider } from "react-redux";
-import store from "./store";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./store";
 
 function App() {
   return (
     <Provider store={store}>
-      <Router history={history}>
-        <Routes />
+      <PersistGate persistor={persistor}>
+        <Router history={history}>
+          <Routes />
 
-        <GlobalStyle />
-      </Router>
+          <GlobalStyle />
+        </Router>
+      </PersistGate>
     </Provider>
   );
 }
