@@ -1,6 +1,8 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
   * {
     box-sizing: border-box;
     margin: 0;
@@ -8,22 +10,33 @@ export default createGlobalStyle`
     outline: 0;
   }
 
+  *:focus {
+    outline: 0;
+  }
+
   html, body, #root {
-    min-height: 100%;
+    height: 100%;
   }
 
   body {
-    background: #fff;
     -webkit-font-smoothing: antialiased !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 
   body, input, button {
-    color: #222;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+    font: 14px Roboto, sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
   }
 
   button {
     cursor: pointer;
   }
-`
+`;

@@ -1,15 +1,20 @@
-import React from 'react'
+import React from "react";
+import { Router } from "react-router-dom";
 
-import Routes from './routes'
-import GlobalStyle from './styles/global'
+import "./config/ReactotronConfig";
+import GlobalStyle from "./styles/global";
+
+import Routes from "./routes";
+import history from "./services/history";
 
 function App() {
   return (
-    <>
+    <Router history={history}>
       <Routes />
+
       <GlobalStyle />
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
