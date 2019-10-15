@@ -1,4 +1,5 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
 import { Router } from "react-router-dom";
 
 import "./config/ReactotronConfig";
@@ -20,6 +21,7 @@ function App() {
           <Routes />
 
           <GlobalStyle />
+          <ToastContainer autoClose="3000" />
         </Router>
       </PersistGate>
     </Provider>
