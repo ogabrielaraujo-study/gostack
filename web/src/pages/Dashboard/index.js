@@ -34,19 +34,17 @@ export default function Dashboard() {
         params: { date },
       });
 
-      //Pegar a timezone do user - cliente "amercad - são paulo"
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
       const data = range.map(hour => {
-        //Formatand o horário para pesquisa - 9:25 = 9:00 arrendondar..
         const checkDate = setSeconds(setMinutes(setHours(date, hour), 0), 0);
         const compareDate = utcToZonedTime(checkDate, timezone);
 
         return {
           time: `${hour}:00h`,
           past: isBefore(compareDate, new Date()),
-          appointment: response.data.find(a =>
-            isEqual(parseISO(a.date), compareDate)
+          appointment: response.data.find(
+            a => parseISO(a.date).toString() === compareDate.toString()
           ),
         };
       });
